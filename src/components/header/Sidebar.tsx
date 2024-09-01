@@ -9,6 +9,7 @@ const SidebarContainer = styled.div<{ $open: boolean | null }>`
   background: ${colors.yellow};
   transition: 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
   width: 25vw;
+  z-index: 1;
 
   ${({ $open }) =>
     !$open &&
