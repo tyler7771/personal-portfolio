@@ -39,7 +39,7 @@ const StyledLogo = styled(Logo)`
 `;
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState<boolean | null>(true);
+  const [menuOpen, setMenuOpen] = useState<boolean | null>(null);
 
   return (
     <>
