@@ -3,17 +3,20 @@ import styled, { css } from "styled-components";
 import { colors } from "../../assets/cssHelpers";
 
 const SidebarContainer = styled.div<{ $open: boolean | null }>`
-  height: calc(100vh - 185px);
+  height: calc(100vh - 180px);
   position: fixed;
   right: 0;
+  top: 180px;
   background: ${colors.yellow};
   transition: 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
   width: 25vw;
   z-index: 1;
+  box-shadow: -2px 9px 10px -2px ${colors.black};
 
   ${({ $open }) =>
     !$open &&
     css`
+      box-shadow: none;
       transform: translateX(25vw);
       transition: transform 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
     `}

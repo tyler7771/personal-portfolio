@@ -21,29 +21,30 @@ const StyledPortait = styled.img`
   right: 22%;
 `;
 
-const ButtonContainer = styled.div`
+const Button = styled.a`
   position: absolute;
   top: 85%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   width: 15.75%;
   height: 6.5%;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  height: 100%;
   border: none;
   background-color: ${colors.yellow};
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   font-size: 30px;
   color: ${colors.white};
-  cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     filter: brightness(95%);
   }
 `;
+
+const text = styled.span``;
 
 const StyledCurve = styled(Curve)`
   position: absolute;
@@ -55,9 +56,7 @@ export default function Header() {
     <PortraitContainer>
       <StyledPortait src={Portrait} />
       <HomeText />
-      <ButtonContainer>
-        <Button>LET'S CHAT!</Button>
-      </ButtonContainer>
+      <Button href="#footer">LET'S CHAT!</Button>
       <StyledCurve />
     </PortraitContainer>
   );

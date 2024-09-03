@@ -34,7 +34,7 @@ const NameText = styled.span`
 const IdentifyText = styled.span`
   display: block;
   font-family: "Heathergreen";
-  color: ${colors.black};
+  color: ${colors.yellow};
   font-size: 15.5vw;
   line-height: 1;
 `;

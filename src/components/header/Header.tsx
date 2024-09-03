@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import Hamburger from "./Hamburger";
 import { ReactComponent as Logo } from "../../assets/images/Logo.svg";
 import Sidebar from "./Sidebar";
+import Stripes from "../Shared/Stripes";
 import { colors } from "../../assets/cssHelpers";
 import { useState } from "react";
 
@@ -16,23 +17,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   z-index: 1;
-`;
-
-const Stripes = styled.div`
-  height: 100%;
-  width: 22%;
-  background-image: linear-gradient(
-    -45deg,
-    transparent 25%,
-    ${colors.white} 25%,
-    ${colors.white} 50%,
-    transparent 50%,
-    transparent 75%,
-    ${colors.white} 75%,
-    ${colors.white}
-  );
-  background-size: 96px 96px;
-  position: relative;
+  box-shadow: 0 2px 10px -2px ${colors.black};
 `;
 
 const logoMove = keyframes`
@@ -54,7 +39,6 @@ const StyledLogo = styled(Logo)`
 
   animation: ${logoMove} linear forwards;
   animation-timeline: scroll();
-  /* animation-range-start: 90vh; */
   animation-range: calc(90vh - 185px) calc(100vh - 185px);
 `;
 
@@ -64,7 +48,7 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <Stripes>
+        <Stripes $width="22%" $color="white">
           <StyledLogo />
         </Stripes>
         <div

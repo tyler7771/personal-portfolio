@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import Basketball from "../../assets/images/Basketball.jpg";
+import Beer from "../../assets/images/ChristmasBeer.jpg";
 import NeverTellMeTheOdds from "../../assets/images/NeverTellMeTheOdds.png";
 import Synth from "../../assets/images/Synth.png";
 import { colors } from "../../assets/cssHelpers";
@@ -32,6 +34,7 @@ const ProjectBlock = styled.div<{
       background-size: cover;
     `}
 `;
+
 const Text = styled.span`
   position: absolute;
   display: block;
@@ -65,7 +68,7 @@ export default function Projects() {
         <ProjectBlock $color="grey" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
-        <ProjectBlock $color="white" />
+        <ProjectBlock $color="white" $img={Beer} />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="white" />
         <ProjectBlock $color="yellow" />
@@ -87,7 +90,7 @@ export default function Projects() {
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="grey" />
-        <ProjectBlock $color="white" />
+        <ProjectBlock $color="white" $img={Basketball} />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="grey" />

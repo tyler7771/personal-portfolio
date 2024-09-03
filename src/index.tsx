@@ -1,6 +1,9 @@
 import "./index.css";
 
 import About from "./components/About/About";
+import { ChakraProvider } from "@chakra-ui/react";
+import Education from "./components/Education/Education";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
@@ -13,10 +16,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Header />
-    <Home />
-    <Projects />
-    <About />
+    <ChakraProvider>
+      <Header />
+      <Home />
+      <Projects />
+      <About />
+      <Education />
+      <Footer />
+    </ChakraProvider>
   </React.StrictMode>
 );
 reportWebVitals();
