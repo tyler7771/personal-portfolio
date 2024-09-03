@@ -1,13 +1,15 @@
-import { ReactComponent as ButtonCircle } from "../../assets/images/ButtonCircle.svg";
+import { ReactComponent as Curve } from "../../assets/images/Curve.svg";
 import HomeText from "./HomeText";
 import Portrait from "../../assets/images/Portrait.png";
 import { colors } from "../../assets/cssHelpers";
 import styled from "styled-components";
 
-const PortraitContainer = styled.div`
+const PortraitContainer = styled.section`
+  margin-top: 185px;
   height: calc(100vh - 185px);
   width: 100%;
   position: relative;
+  background-color: ${colors.white};
 `;
 
 const StyledPortait = styled.img`
@@ -43,6 +45,11 @@ const Button = styled.button`
   }
 `;
 
+const StyledCurve = styled(Curve)`
+  position: absolute;
+  bottom: -15px;
+`;
+
 export default function Header() {
   return (
     <PortraitContainer>
@@ -51,6 +58,7 @@ export default function Header() {
       <ButtonContainer>
         <Button>LET'S CHAT!</Button>
       </ButtonContainer>
+      <StyledCurve />
     </PortraitContainer>
   );
 }

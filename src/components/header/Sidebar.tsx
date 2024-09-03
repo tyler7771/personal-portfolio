@@ -38,17 +38,39 @@ const NavLink = styled.a`
   }
 `;
 
-export default function Sidebar({ open }: { open: boolean | null }) {
+export default function Sidebar({
+  open,
+  closeSidebar,
+}: {
+  open: boolean | null;
+  closeSidebar: () => void;
+}) {
   return (
     <SidebarContainer $open={open}>
-      <NavLink>Home</NavLink>
-      <NavLink>Projects</NavLink>
-      <NavLink>Work History</NavLink>
-      <NavLink>About</NavLink>
-      <NavLink>Education</NavLink>
-      <NavLink>Links</NavLink>
-      <NavLink>Music Vibes</NavLink>
-      <NavLink>Contact</NavLink>
+      <NavLink href="#" onClick={closeSidebar}>
+        Home
+      </NavLink>
+      <NavLink href="#projects" onClick={closeSidebar}>
+        Projects
+      </NavLink>
+      <NavLink href="#work" onClick={closeSidebar}>
+        Work History
+      </NavLink>
+      <NavLink href="#about" onClick={closeSidebar}>
+        About
+      </NavLink>
+      <NavLink href="#education" onClick={closeSidebar}>
+        Education
+      </NavLink>
+      <NavLink href="#socials" onClick={closeSidebar}>
+        Socials
+      </NavLink>
+      <NavLink href="#music" onClick={closeSidebar}>
+        Music Vibes
+      </NavLink>
+      <NavLink href="#footer" onClick={closeSidebar}>
+        Contact
+      </NavLink>
       <NavLink
         href="https://drive.google.com/file/d/1X6xpQRq7MB2UsT2uAayAwgrP_xOckueb/view?usp=sharing"
         target="_blank"
