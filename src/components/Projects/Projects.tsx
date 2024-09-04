@@ -1,10 +1,18 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import Basketball from "../../assets/images/Basketball.jpg";
 import Beer from "../../assets/images/ChristmasBeer.jpg";
 import NeverTellMeTheOdds from "../../assets/images/NeverTellMeTheOdds.png";
 import Synth from "../../assets/images/Synth.png";
 import { colors } from "../../assets/cssHelpers";
+
+type ProjectTypes = {
+  $color: "white" | "black" | "yellow" | "grey";
+  $img?: any;
+  $hasChild?: boolean;
+  $top?: string;
+  $lineWidth?: string;
+};
 
 const ProjectsContainer = styled.section`
   width: 100%;
@@ -18,21 +26,51 @@ const BlocksContainer = styled.div`
   justify-content: center;
 `;
 
-const ProjectBlock = styled.div<{
-  $color: "white" | "black" | "yellow" | "grey";
-  $img?: any;
-}>`
+const ProjectBlock = styled.div<ProjectTypes>`
   width: 11.111vw;
   height: 11.111vw;
   background-color: ${({ $color }) => colors[$color]};
   display: inline;
-
-  ${({ $img }) =>
-    $img &&
+  ${({ $hasChild }) =>
+    $hasChild &&
     css`
-      background-image: url(${$img});
-      background-size: cover;
-    `}
+      position: relative;
+      overflow: hidden;
+    `};
+
+  ${({ $img, $top, $lineWidth }) => {
+    const lineAnimation = keyframes`
+      from {
+        width: 0;
+      }
+      to { 
+        width: ${$lineWidth}
+      }
+    `;
+
+    return (
+      $img &&
+      css`
+        background-image: url(${$img});
+        background-size: cover;
+        position: relative;
+
+        &:after {
+          content: "";
+          width: ${$lineWidth};
+          border-bottom: solid 1px ${colors.yellow};
+          position: absolute;
+          left: 50%;
+          top: ${$top};
+          z-index: 1;
+
+          animation: ${lineAnimation} linear;
+          animation-timeline: view();
+          animation-range: cover 0% cover 25%;
+        }
+      `
+    );
+  }}
 `;
 
 const Text = styled.span`
@@ -55,6 +93,40 @@ const Text = styled.span`
   }
 `;
 
+const textAnimation = keyframes`
+      from {
+        left: -68%;
+      }
+      to { 
+        left: 16%
+      }
+    `;
+
+const TextContainer = styled.div`
+  width: 68%;
+  position: absolute;
+  left: 16%;
+  bottom: 16%;
+
+  animation: ${textAnimation} linear;
+  animation-timeline: view();
+  animation-range: cover 0% cover 25%;
+
+  p {
+    &:nth-child(1) {
+      font-family: "Heathergreen";
+      color: ${colors.yellow};
+      font-size: 2.34vw;
+      line-height: 1.2;
+    }
+    &:nth-child(2) {
+      color: ${colors.white};
+      font-size: 0.94vw;
+      line-height: 1;
+    }
+  }
+`;
+
 export default function Projects() {
   return (
     <ProjectsContainer id="projects">
@@ -68,8 +140,13 @@ export default function Projects() {
         <ProjectBlock $color="grey" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
-        <ProjectBlock $color="white" $img={Beer} />
-        <ProjectBlock $color="black" />
+        <ProjectBlock $color="white" $img={Beer} $lineWidth="89%" $top="42%" />
+        <ProjectBlock $color="black" $hasChild>
+          <TextContainer>
+            <p>REACT</p>
+            <p>12 Beers of Christmas</p>
+          </TextContainer>
+        </ProjectBlock>
         <ProjectBlock $color="white" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
@@ -78,10 +155,25 @@ export default function Projects() {
         <ProjectBlock $color="white" />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="grey" />
-        <ProjectBlock $color="white" $img={NeverTellMeTheOdds} />
-        <ProjectBlock $color="black" />
-        <ProjectBlock $color="white" $img={Synth} />
-        <ProjectBlock $color="black" />
+        <ProjectBlock
+          $color="white"
+          $img={NeverTellMeTheOdds}
+          $lineWidth="107%"
+          $top="42%"
+        />
+        <ProjectBlock $color="black" $hasChild>
+          <TextContainer>
+            <p>VANILLA JS</p>
+            <p>Never Tell Me The Odds</p>
+          </TextContainer>
+        </ProjectBlock>
+        <ProjectBlock $color="white" $img={Synth} $lineWidth="89%" $top="50%" />
+        <ProjectBlock $color="black" $hasChild>
+          <TextContainer>
+            <p>REACT</p>
+            <p>Synthaseizure</p>
+          </TextContainer>
+        </ProjectBlock>
         <ProjectBlock $color="white" />
         <ProjectBlock $color="grey" />
       </BlocksContainer>
@@ -90,8 +182,18 @@ export default function Projects() {
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="grey" />
-        <ProjectBlock $color="white" $img={Basketball} />
-        <ProjectBlock $color="black" />
+        <ProjectBlock
+          $color="white"
+          $img={Basketball}
+          $lineWidth="89%"
+          $top="50%"
+        />
+        <ProjectBlock $color="black" $hasChild>
+          <TextContainer>
+            <p>REACT</p>
+            <p>NBA Compare</p>
+          </TextContainer>
+        </ProjectBlock>
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="grey" />
         <ProjectBlock $color="black" />

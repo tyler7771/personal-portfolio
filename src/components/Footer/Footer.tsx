@@ -29,7 +29,7 @@ const StyledLogo = styled(Logo)`
 const Text = styled.p`
   font-size: 30px;
   color: ${colors.yellow};
-  margin-top: 0;
+  margin: 0 0 16px;
 `;
 
 const Label = styled.label<{ $marginTop?: string }>`
@@ -102,9 +102,7 @@ const Button = styled.button`
 
 export default function Footer() {
   const form = useRef<HTMLFormElement>(null);
-  const toast = useToast({
-    position: "top",
-  });
+  const toast = useToast();
 
   const sendEmail: FormEventHandler<HTMLFormElement> = (
     e: FormEvent<HTMLFormElement>
@@ -113,36 +111,29 @@ export default function Footer() {
 
     if (form.current === null) return;
 
-    toast({
-      title: "Email sent!",
-      status: "success",
-      description: "I'll get back to you as soon as I can!",
-      duration: 100000,
-      isClosable: true,
-    });
-    // emailjs
-    //   .sendForm(serviceId, templateId, form.current, {
-    //     publicKey: userId,
-    //   })
-    //   .then(
-    //     () => {
-    //       form?.current?.reset();
-    //       toast({
-    //         title: "Email sent!",
-    //         status: "success",
-    //         description: "I'll get back to you as soon as I can!",
-    //         isClosable: true,
-    //       });
-    //     },
-    //     (error) => {
-    //       toast({
-    //         title: "Ope! Something went wrong",
-    //         status: "error",
-    //         description: error.text,
-    //         isClosable: true,
-    //       });
-    //     }
-    //   );
+    emailjs
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: userId,
+      })
+      .then(
+        () => {
+          form?.current?.reset();
+          toast({
+            title: "Email sent!",
+            status: "success",
+            description: "I'll get back to you as soon as I can!",
+            isClosable: true,
+          });
+        },
+        (error) => {
+          toast({
+            title: "Ope! Something went wrong",
+            status: "error",
+            description: error.text,
+            isClosable: true,
+          });
+        }
+      );
   };
 
   return (

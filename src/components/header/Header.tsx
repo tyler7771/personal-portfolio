@@ -16,7 +16,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   box-shadow: 0 2px 10px -2px ${colors.black};
 `;
 
@@ -34,7 +34,7 @@ const StyledLogo = styled(Logo)`
   position: absolute;
   top: 100%;
   left: 50%;
-  z-index: 1;
+  z-index: 101;
   transform: translateY(-50%) translateX(-50%);
 
   animation: ${logoMove} linear forwards;
