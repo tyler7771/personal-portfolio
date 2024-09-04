@@ -1,3 +1,4 @@
+import ProjectModal, { ProjectTypes } from "./ProjectsModal";
 import styled, { css, keyframes } from "styled-components";
 
 import Basketball from "../../assets/images/Basketball.jpg";
@@ -5,10 +6,11 @@ import Beer from "../../assets/images/ChristmasBeer.jpg";
 import NeverTellMeTheOdds from "../../assets/images/NeverTellMeTheOdds.png";
 import Synth from "../../assets/images/Synth.png";
 import { colors } from "../../assets/cssHelpers";
+import { useState } from "react";
 
-type ProjectTypes = {
+type ProjectBlockTypes = {
   $color: "white" | "black" | "yellow" | "grey";
-  $img?: any;
+  $img?: string;
   $hasChild?: boolean;
   $top?: string;
   $lineWidth?: string;
@@ -26,7 +28,7 @@ const BlocksContainer = styled.div`
   justify-content: center;
 `;
 
-const ProjectBlock = styled.div<ProjectTypes>`
+const ProjectBlock = styled.div<ProjectBlockTypes>`
   width: 11.111vw;
   height: 11.111vw;
   background-color: ${({ $color }) => colors[$color]};
@@ -36,6 +38,8 @@ const ProjectBlock = styled.div<ProjectTypes>`
     css`
       position: relative;
       overflow: hidden;
+      height: 100%;
+      width: 50%;
     `};
 
   ${({ $img, $top, $lineWidth }) => {
@@ -54,6 +58,8 @@ const ProjectBlock = styled.div<ProjectTypes>`
         background-image: url(${$img});
         background-size: cover;
         position: relative;
+        height: 100%;
+        width: 50%;
 
         &:after {
           content: "";
@@ -127,7 +133,40 @@ const TextContainer = styled.div`
   }
 `;
 
+const ClickableContainer = styled.div`
+  cursor: pointer;
+  display: flex;
+  height: 11.111vw;
+  width: 22.222vw;
+
+  &:hover {
+    &:after {
+      content: "";
+      display: block;
+      height: 11.111vw;
+      background: ${colors.yellow};
+      opacity: 0.3;
+      filter: alpha(opacity = 30);
+      width: 22.222vw;
+      position: absolute;
+    }
+  }
+`;
+
 export default function Projects() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [project, setProject] = useState<ProjectTypes>(null);
+
+  const handleOpen = (currentProject: ProjectTypes) => {
+    setModalOpen(true);
+    setProject(currentProject);
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setProject(null);
+  };
+
   return (
     <ProjectsContainer id="projects">
       <Text>
@@ -140,13 +179,20 @@ export default function Projects() {
         <ProjectBlock $color="grey" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
-        <ProjectBlock $color="white" $img={Beer} $lineWidth="89%" $top="42%" />
-        <ProjectBlock $color="black" $hasChild>
-          <TextContainer>
-            <p>REACT</p>
-            <p>12 Beers of Christmas</p>
-          </TextContainer>
-        </ProjectBlock>
+        <ClickableContainer onClick={() => handleOpen("beers")}>
+          <ProjectBlock
+            $color="white"
+            $img={Beer}
+            $lineWidth="89%"
+            $top="42%"
+          />
+          <ProjectBlock $color="black" $hasChild>
+            <TextContainer>
+              <p>REACT</p>
+              <p>12 Beers of Christmas</p>
+            </TextContainer>
+          </ProjectBlock>
+        </ClickableContainer>
         <ProjectBlock $color="white" />
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
@@ -155,25 +201,35 @@ export default function Projects() {
         <ProjectBlock $color="white" />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="grey" />
-        <ProjectBlock
-          $color="white"
-          $img={NeverTellMeTheOdds}
-          $lineWidth="107%"
-          $top="42%"
-        />
-        <ProjectBlock $color="black" $hasChild>
-          <TextContainer>
-            <p>VANILLA JS</p>
-            <p>Never Tell Me The Odds</p>
-          </TextContainer>
-        </ProjectBlock>
-        <ProjectBlock $color="white" $img={Synth} $lineWidth="89%" $top="50%" />
-        <ProjectBlock $color="black" $hasChild>
-          <TextContainer>
-            <p>REACT</p>
-            <p>Synthaseizure</p>
-          </TextContainer>
-        </ProjectBlock>
+        <ClickableContainer onClick={() => handleOpen("odds")}>
+          <ProjectBlock
+            $color="white"
+            $img={NeverTellMeTheOdds}
+            $lineWidth="107%"
+            $top="42%"
+          />
+          <ProjectBlock $color="black" $hasChild>
+            <TextContainer>
+              <p>VANILLA JS</p>
+              <p>Never Tell Me The Odds</p>
+            </TextContainer>
+          </ProjectBlock>
+        </ClickableContainer>
+        <ClickableContainer onClick={() => handleOpen("synth")}>
+          <ProjectBlock
+            $color="white"
+            $img={Synth}
+            $lineWidth="89%"
+            $top="50%"
+          />
+          <ProjectBlock $color="black" $hasChild>
+            <TextContainer>
+              <p>REACT</p>
+              <p>Synthaseizure</p>
+            </TextContainer>
+          </ProjectBlock>
+        </ClickableContainer>
+
         <ProjectBlock $color="white" />
         <ProjectBlock $color="grey" />
       </BlocksContainer>
@@ -182,22 +238,26 @@ export default function Projects() {
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="black" />
         <ProjectBlock $color="grey" />
-        <ProjectBlock
-          $color="white"
-          $img={Basketball}
-          $lineWidth="89%"
-          $top="50%"
-        />
-        <ProjectBlock $color="black" $hasChild>
-          <TextContainer>
-            <p>REACT</p>
-            <p>NBA Compare</p>
-          </TextContainer>
-        </ProjectBlock>
+        <ClickableContainer onClick={() => handleOpen("nba")}>
+          <ProjectBlock
+            $color="white"
+            $img={Basketball}
+            $lineWidth="89%"
+            $top="50%"
+          />
+          <ProjectBlock $color="black" $hasChild>
+            <TextContainer>
+              <p>REACT</p>
+              <p>NBA Compare</p>
+            </TextContainer>
+          </ProjectBlock>
+        </ClickableContainer>
+
         <ProjectBlock $color="yellow" />
         <ProjectBlock $color="grey" />
         <ProjectBlock $color="black" />
       </BlocksContainer>
+      <ProjectModal isOpen={modalOpen} close={handleClose} project={project} />
     </ProjectsContainer>
   );
 }

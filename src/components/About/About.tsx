@@ -5,15 +5,15 @@ import styled from "styled-components";
 
 const AboutContainer = styled.section`
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   background-color: ${colors.yellow};
   position: relative;
 `;
 
 const TextContainer = styled.div`
   position: absolute;
-  top: 21vh;
-  right: 9.15vw;
+  top: 24vh;
+  right: 11.15vw;
   background: ${colors.orange};
   width: 59vw;
   padding: 1vh 23vh 5vh;
@@ -41,7 +41,7 @@ const TextContainer = styled.div`
 const PortraitContainer = styled.div`
   position: absolute;
   top: 16vh;
-  left: 18vw;
+  left: 16vw;
   z-index: 2;
 `;
 
@@ -79,6 +79,41 @@ const Portrait = styled.div`
   }
 `;
 
+const SkillsContainer = styled.div`
+  position: absolute;
+  left: 29%;
+  /* transform: translateX(-50%); */
+  top: 60vh;
+  width: 50vw;
+  display: grid;
+  grid-template-areas: "header header header" "left center right" "left center right" "left center right";
+`;
+
+const SkillsHeader = styled.div`
+  grid-area: header;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 16px;
+`;
+
+const SkillsRow = styled.div`
+  p {
+    font-size: 25px;
+    font-family: "Inter Bold";
+    margin-bottom: 8px;
+
+    &:nth-child(1) {
+      grid-area: left;
+    }
+    &:nth-child(2) {
+      grid-area: center;
+    }
+    &:nth-child(3) {
+      grid-area: right;
+    }
+  }
+`;
+
 export default function About() {
   return (
     <AboutContainer id="about">
@@ -96,6 +131,24 @@ export default function About() {
           bikes, and a great cup of coffee (or a cold beer).
         </p>
       </TextContainer>
+      <SkillsContainer>
+        <SkillsHeader>I have experience working with:</SkillsHeader>
+        <SkillsRow>
+          <p>REACT</p>
+          <p>JAVASCRIPT</p>
+          <p>TYPESCRIPT</p>
+        </SkillsRow>
+        <SkillsRow>
+          <p>DESIGN SYSTEMS</p>
+          <p>NEXT.JS</p>
+          <p>PLAYWRIGHT</p>
+        </SkillsRow>
+        <SkillsRow>
+          <p>STYLED COMPONENTS</p>
+          <p>GRAPHQL</p>
+          <p>RUBY ON RAILS</p>
+        </SkillsRow>
+      </SkillsContainer>
     </AboutContainer>
   );
 }

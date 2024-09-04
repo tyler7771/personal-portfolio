@@ -1,3 +1,4 @@
+import ChatCircle from "../../assets/images/ChatCircle.svg";
 import { ReactComponent as Curve } from "../../assets/images/Curve.svg";
 import HomeText from "./HomeText";
 import Portrait from "../../assets/images/Portrait.png";
@@ -41,6 +42,13 @@ const Button = styled.a`
 
   &:hover {
     filter: brightness(95%);
+  }
+
+  &:after {
+    content: url(${ChatCircle});
+    position: absolute;
+    width: 110%;
+    left: -0.5vw;
   }
 `;
 
