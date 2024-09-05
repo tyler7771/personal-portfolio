@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ccad9172.css",
+    "main.js": "/static/js/main.c2ba464d.js",
+    "static/js/453.2b200461.chunk.js": "/static/js/453.2b200461.chunk.js",
+    "static/media/NeverTellMeTheOdds.png": "/static/media/NeverTellMeTheOdds.47efe902f8339ee5f063.png",
+    "static/media/Portrait.png": "/static/media/Portrait.b69622397f593eaba654.png",
+    "static/media/Basketball.jpg": "/static/media/Basketball.09b365c44913170e41c4.jpg",
+    "static/media/Inter-ExtraBold.otf": "/static/media/Inter-ExtraBold.a04422143a247b5ce40f.otf",
+    "static/media/Inter-Medium.otf": "/static/media/Inter-Medium.458d4e2d8d4b09bf743d.otf",
+    "static/media/Heathergreen.otf": "/static/media/Heathergreen.6bd4d9044f76dd2b2ed3.otf",
+    "static/media/Bike.png": "/static/media/Bike.5f35936c71ac3491a584.png",
+    "static/media/Synth.png": "/static/media/Synth.ac07592abfa2cc238521.png",
+    "static/media/IWU.png": "/static/media/IWU.b6502c71f95aaf893469.png",
+    "static/media/ChristmasBeer.jpg": "/static/media/ChristmasBeer.23afe70b7bf052ccd750.jpg",
+    "static/media/aboutPortrait.jpg": "/static/media/aboutPortrait.fe9ea1c7123de5032f10.jpg",
+    "static/media/ChatCircle.svg": "/static/media/ChatCircle.ea1cdea27ae71dd894180863002c0344.svg",
+    "static/media/AppAcademy.png": "/static/media/AppAcademy.bd530c195ba1e2fc6917.png",
+    "static/media/Logo.svg": "/static/media/Logo.2af9266289b7369fc08148712563f571.svg",
+    "index.html": "/index.html",
+    "static/media/X.svg": "/static/media/X.d1115548f286f5eddc137fc7dec7be2f.svg",
+    "static/media/Curve.svg": "/static/media/Curve.9d54e67cded684e44f901b1b630bc739.svg",
+    "main.ccad9172.css.map": "/static/css/main.ccad9172.css.map",
+    "main.c2ba464d.js.map": "/static/js/main.c2ba464d.js.map",
+    "453.2b200461.chunk.js.map": "/static/js/453.2b200461.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccad9172.css",
+    "static/js/main.c2ba464d.js"
+  ]
+}
