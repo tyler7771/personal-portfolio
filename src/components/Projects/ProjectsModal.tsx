@@ -112,8 +112,12 @@ export default function ProjectModal({
       <BodyContainer>
         <ImageContainer>
           <Image src={img} />
-          <Button href={prodLink}>View</Button>
-          <Button href={gitLink}>Github</Button>
+          <Button href={prodLink} target="_blank">
+            View
+          </Button>
+          <Button href={gitLink} target="_blank">
+            Github
+          </Button>
         </ImageContainer>
         <DescriptionContainer>
           {description.split("\n").map((el, i) => (

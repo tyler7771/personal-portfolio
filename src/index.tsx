@@ -9,7 +9,7 @@ import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import WorkExpericance from "./components/WorkExperiance/WorkExperiance";
+import WorkExperience from "./components/WorkExperience/WorkExperience";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -22,7 +22,7 @@ root.render(
       <Home />
       <Projects />
       <About />
-      <WorkExpericance />
+      <WorkExperience />
       <Education />
       <Footer />
     </ChakraProvider>

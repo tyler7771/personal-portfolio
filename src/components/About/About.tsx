@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const AboutContainer = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 60vw;
   background-color: ${colors.yellow};
   position: relative;
 `;
