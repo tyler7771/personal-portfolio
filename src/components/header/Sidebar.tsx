@@ -10,7 +10,7 @@ const SidebarContainer = styled.div<{ $open: boolean | null }>`
   background: ${colors.yellow};
   transition: 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
   width: 25vw;
-  z-index: 1;
+  z-index: 100;
   box-shadow: -2px 9px 10px -2px ${colors.black};
 
   ${({ $open }) =>
@@ -56,11 +56,11 @@ export default function Sidebar({
       <NavLink href="#projects" onClick={closeSidebar}>
         Projects
       </NavLink>
-      <NavLink href="#work" onClick={closeSidebar}>
-        Work History
-      </NavLink>
       <NavLink href="#about" onClick={closeSidebar}>
         About
+      </NavLink>
+      <NavLink href="#work" onClick={closeSidebar}>
+        Work History
       </NavLink>
       <NavLink href="#education" onClick={closeSidebar}>
         Education
@@ -68,9 +68,9 @@ export default function Sidebar({
       <NavLink href="#socials" onClick={closeSidebar}>
         Socials
       </NavLink>
-      <NavLink href="#music" onClick={closeSidebar}>
+      {/* <NavLink href="#music" onClick={closeSidebar}>
         Music Vibes
-      </NavLink>
+      </NavLink> */}
       <NavLink href="#footer" onClick={closeSidebar}>
         Contact
       </NavLink>

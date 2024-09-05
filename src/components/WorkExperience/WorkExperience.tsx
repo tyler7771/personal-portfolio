@@ -6,7 +6,7 @@ const WorkContainer = styled.section`
   width: 100%;
   background-color: ${colors.yellow};
   position: relative;
-  padding-bottom: 96px;
+  padding: 7vw 0;
 `;
 
 const GridContainer = styled.div`
@@ -20,7 +20,7 @@ const GridContainer = styled.div`
 const Text = styled.span`
   position: absolute;
   left: 11.5vw;
-  top: 5.5vw;
+  top: 12.5vw;
   z-index: 3;
   font-family: "Heathergreen";
   font-size: 14vw;
