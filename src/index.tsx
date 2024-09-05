@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Socials from "./components/Socials/Socials";
 import WorkExperience from "./components/WorkExperience/WorkExperience";
 import reportWebVitals from "./reportWebVitals";
 
@@ -24,6 +25,7 @@ root.render(
       <About />
       <WorkExperience />
       <Education />
+      <Socials />
       <Footer />
     </ChakraProvider>
   </React.StrictMode>
