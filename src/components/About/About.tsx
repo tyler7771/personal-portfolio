@@ -5,43 +5,64 @@ import styled from "styled-components";
 
 const AboutContainer = styled.section`
   width: 100%;
-  height: 45vw;
   background-color: ${colors.yellow};
+`;
+
+const InfoContainer = styled.div`
   position: relative;
+  width: 85vw;
+  margin: 9vw auto 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const TextContainer = styled.div`
-  position: absolute;
-  top: 24vh;
-  right: 11.15vw;
-  background: ${colors.orange};
-  width: 59vw;
-  padding: 1vh 23vh 5vh;
+  width: 60vw;
+  height: 18vw;
+  padding: 3vw 10vw 3vw 13vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: -10%;
+
+  @media (min-width: 1400px) and (max-width: 1919px) {
+    padding: 3vw 10vw 3vw 13vw;
+  }
 
   p {
-    font-family: "Inter Bold";
     text-align: justify;
-    font-size: 25px;
+    font-size: 1.34vw;
     color: ${colors.black};
+    position: relative;
+    line-height: 1.4;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    border: 1px solid ${colors.black};
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
   }
 
   &:after {
+    background: ${colors.orange};
     content: "";
-    border: 1px solid ${colors.black};
-    display: block;
-    width: 59vw;
-    left: -30px;
     position: absolute;
-    bottom: 30px;
-    top: -30px;
-    z-index: 1;
+    top: 10%;
+    right: -3%;
+    bottom: -10%;
+    left: 3%;
+    z-index: 0;
   }
 `;
 
 const PortraitContainer = styled.div`
-  position: absolute;
-  top: 16vh;
-  left: 16vw;
   z-index: 2;
 `;
 
@@ -51,6 +72,7 @@ const Portrait = styled.div`
   border-radius: 50%;
   width: 24vw;
   height: 24vw;
+  position: relative;
 
   &:before {
     content: "";
@@ -80,25 +102,23 @@ const Portrait = styled.div`
 `;
 
 const SkillsContainer = styled.div`
-  position: absolute;
-  left: 29%;
-  /* transform: translateX(-50%); */
-  top: 60vh;
-  width: 50vw;
+  width: 70vw;
   display: grid;
+  margin: 0 auto;
+  padding-left: 7vw;
   grid-template-areas: "header header header" "left center right" "left center right" "left center right";
 `;
 
 const SkillsHeader = styled.div`
   grid-area: header;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5vw;
   margin-bottom: 16px;
 `;
 
 const SkillsRow = styled.div`
   p {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter Bold";
     margin-bottom: 8px;
 
@@ -118,19 +138,22 @@ export default function About() {
   return (
     <AboutContainer id="about">
       <Stripes $width="100%" $color="black" $height="90px" />
-      <PortraitContainer>
-        <Portrait />
-      </PortraitContainer>
-      <TextContainer>
-        <p>
-          I’ve always had a passion for creating things and working to make
-          people’s lives better. I love frontend engineering because it combines
-          my passions for creating and making things that are going to make
-          people's lives better or easier. I was born and raised in the midwest.
-          I love making and listening to music, riding and building fixed gear
-          bikes, and a great cup of coffee (or a cold beer).
-        </p>
-      </TextContainer>
+      <InfoContainer>
+        <PortraitContainer>
+          <Portrait />
+        </PortraitContainer>
+        <TextContainer>
+          <p>
+            I’ve always had a passion for creating things and working to make
+            people’s lives better. I love frontend engineering because it
+            combines my passions for creating and making things that are going
+            to make people's lives better or easier. I was born and raised in
+            the midwest. I love making and listening to music, riding and
+            building fixed gear bikes, and a great cup of coffee (or a cold
+            beer).
+          </p>
+        </TextContainer>
+      </InfoContainer>
       <SkillsContainer>
         <SkillsHeader>I have experience working with:</SkillsHeader>
         <SkillsRow>

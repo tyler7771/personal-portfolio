@@ -8,7 +8,9 @@ import { colors } from "../../assets/cssHelpers";
 import { useState } from "react";
 
 const HeaderContainer = styled.div`
-  height: 185px;
+  height: 9.65vw;
+  min-height: 90px;
+  max-height: 180px;
   width: 100vw;
   background: ${colors.yellow};
   display: flex;
@@ -25,12 +27,14 @@ const logoMove = keyframes`
     top: 100%;
   }
   to {
-    top: 90px
+    top: 50%;
   }
   `;
 
 const StyledLogo = styled(Logo)`
-  height: 135px;
+  height: 7vw;
+  min-height: 65px;
+  max-height: 135px;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -39,7 +43,7 @@ const StyledLogo = styled(Logo)`
 
   animation: ${logoMove} linear forwards;
   animation-timeline: scroll();
-  animation-range: calc(90vh - 185px) calc(100vh - 185px);
+  animation-range: calc(90vh - 9.65vw) calc(100vh - 9.65vw);
 `;
 
 export default function Header() {
@@ -48,7 +52,7 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <Stripes $width="22%" $color="white">
+        <Stripes $width="22%" $color="white" $isHeader>
           <StyledLogo />
         </Stripes>
         <div

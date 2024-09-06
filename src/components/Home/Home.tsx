@@ -6,11 +6,16 @@ import { colors } from "../../assets/cssHelpers";
 import styled from "styled-components";
 
 const PortraitContainer = styled.section`
-  margin-top: 185px;
-  height: calc(100vh - 185px);
+  margin-top: 9.65vw;
+  height: calc(100vh - 9.65vw);
   width: 100%;
   position: relative;
   background-color: ${colors.white};
+
+  @media (max-width: 932px) {
+    margin-top: 90px;
+    height: calc(100vh -90px);
+  }
 `;
 
 const StyledPortait = styled.img`

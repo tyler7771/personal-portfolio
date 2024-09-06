@@ -8,6 +8,7 @@ const Stripes = styled.div<{
   $width: string;
   $color: Colors;
   $height?: string;
+  $isHeader?: boolean;
 }>`
   height: ${({ $height }) => $height || "100%"};
   width: ${({ $width }) => $width};
@@ -26,6 +27,20 @@ const Stripes = styled.div<{
     `}
   background-size: 96px 96px;
   position: relative;
+
+  @media (max-width: 600px) {
+    background-size: 50px 50px;
+    ${({ $isHeader }) =>
+      $isHeader
+        ? css`
+            width: 30%;
+          `
+        : css`
+            @media (max-width: 600px) {
+              height: 50px;
+            }
+          `}
+  }
 `;
 
 export default Stripes;
