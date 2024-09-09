@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.c2f702b7.css",
-    "main.js": "/personal-portfolio/static/js/main.bb2cee45.js",
+    "main.css": "/personal-portfolio/static/css/main.1f1d32b7.css",
+    "main.js": "/personal-portfolio/static/js/main.a0c8bc54.js",
     "static/js/453.2b200461.chunk.js": "/personal-portfolio/static/js/453.2b200461.chunk.js",
     "static/media/NeverTellMeTheOdds.png": "/personal-portfolio/static/media/NeverTellMeTheOdds.47efe902f8339ee5f063.png",
     "static/media/Portrait.png": "/personal-portfolio/static/media/Portrait.b69622397f593eaba654.png",
@@ -20,12 +20,12 @@
     "index.html": "/personal-portfolio/index.html",
     "static/media/X.svg": "/personal-portfolio/static/media/X.d1115548f286f5eddc137fc7dec7be2f.svg",
     "static/media/Curve.svg": "/personal-portfolio/static/media/Curve.b0d392cba146187ab619534988d569b5.svg",
-    "main.c2f702b7.css.map": "/personal-portfolio/static/css/main.c2f702b7.css.map",
-    "main.bb2cee45.js.map": "/personal-portfolio/static/js/main.bb2cee45.js.map",
+    "main.1f1d32b7.css.map": "/personal-portfolio/static/css/main.1f1d32b7.css.map",
+    "main.a0c8bc54.js.map": "/personal-portfolio/static/js/main.a0c8bc54.js.map",
     "453.2b200461.chunk.js.map": "/personal-portfolio/static/js/453.2b200461.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2f702b7.css",
-    "static/js/main.bb2cee45.js"
+    "static/css/main.1f1d32b7.css",
+    "static/js/main.a0c8bc54.js"
   ]
 }
