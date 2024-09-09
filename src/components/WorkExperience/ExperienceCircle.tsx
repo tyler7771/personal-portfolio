@@ -70,6 +70,10 @@ const Title = styled.p`
   text-align: center;
   line-height: 1;
   margin-bottom: 16px;
+
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    font-size: 4vw;
+  }
 `;
 
 const Company = styled.p`
@@ -78,12 +82,20 @@ const Company = styled.p`
   font-size: 1.25vw;
   text-align: center;
   width: 75%;
+
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    font-size: 1.5vw;
+  }
 `;
 
 const DateRange = styled.p`
   color: ${colors.yellow};
   font-family: "Heathergreen";
   font-size: 1.85vw;
+
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    font-size: 2.5vw;
+  }
 `;
 
 export default function ExperienceCircle({

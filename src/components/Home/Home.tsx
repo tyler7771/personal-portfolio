@@ -55,9 +55,11 @@ const Button = styled.a`
     width: 110%;
     left: -0.5vw;
   }
-`;
 
-const text = styled.span``;
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    font-size: 23px;
+  }
+`;
 
 const StyledCurve = styled(Curve)`
   position: absolute;

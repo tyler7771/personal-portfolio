@@ -77,10 +77,36 @@ const ProjectBlock = styled.div<ProjectBlockTypes>`
       `
     );
   }}
+
+  @media (max-width: 1399px) {
+    width: 14.285vw;
+    height: 14.285vw;
+
+    &.md {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 20vw;
+    height: 20vw;
+
+    &.sm {
+      display: none;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 25vw;
+    height: 25vw;
+
+    &.xs {
+      display: none;
+    }
+  }
 `;
 
 const Text = styled.span`
   position: absolute;
+  width: 27vw;
   display: block;
   left: 13vw;
   top: 21vw;
@@ -93,9 +119,27 @@ const Text = styled.span`
 
   @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
     color: transparent;
+    -webkit-text-stroke: 2px ${colors.white};
+    text-stroke: 2px ${colors.white};
+    text-shadow: none;
+  }
+
+  @media (max-width: 1399px) {
+    top: 28vw;
+  }
+  @media (max-width: 800px) {
+    top: 37vw;
+    left: 4vw;
+    font-size: 19.5vw;
+    width: 35vw;
     -webkit-text-stroke: 1px ${colors.white};
     text-stroke: 1px ${colors.white};
-    text-shadow: none;
+  }
+  @media (max-width: 500px) {
+    position: unset;
+    width: unset;
+    margin-bottom: 3vw;
+    text-align: center;
   }
 `;
 
@@ -113,7 +157,6 @@ const TextContainer = styled.div`
   position: absolute;
   left: 16%;
   bottom: 16%;
-
   animation: ${textAnimation} linear;
   animation-timeline: view();
   animation-range: cover 0% cover 25%;
@@ -124,11 +167,31 @@ const TextContainer = styled.div`
       color: ${colors.yellow};
       font-size: 2.34vw;
       line-height: 1.2;
+
+      @media (max-width: 1399px) {
+        font-size: 3vw;
+      }
+      @media (max-width: 800px) {
+        font-size: 4vw;
+      }
+      @media (max-width: 500px) {
+        font-size: 5vw;
+      }
     }
     &:nth-child(2) {
       color: ${colors.white};
       font-size: 0.94vw;
       line-height: 1;
+
+      @media (max-width: 1399px) {
+        font-size: 1.25vw;
+      }
+      @media (max-width: 800px) {
+        font-size: 1.9vw;
+      }
+      @media (max-width: 500px) {
+        font-size: 2.25vw;
+      }
     }
   }
 `;
@@ -151,6 +214,19 @@ const ClickableContainer = styled.div`
       position: absolute;
     }
   }
+
+  @media (max-width: 1399px) {
+    width: 28.57vw;
+    height: 14.285vw;
+  }
+  @media (max-width: 800px) {
+    width: 40vw;
+    height: 20vw;
+  }
+  @media (max-width: 500px) {
+    width: 50vw;
+    height: 25vw;
+  }
 `;
 
 export default function Projects() {
@@ -169,15 +245,11 @@ export default function Projects() {
 
   return (
     <ProjectsContainer id="projects">
-      <Text>
-        MY
-        <br />
-        PROJECTS
-      </Text>
+      <Text>MY PROJECTS</Text>
       <BlocksContainer>
-        <ProjectBlock $color="black" />
-        <ProjectBlock $color="grey" />
-        <ProjectBlock $color="yellow" />
+        <ProjectBlock $color="black" className="md" />
+        <ProjectBlock $color="grey" className="sm" />
+        <ProjectBlock $color="yellow" className="xs" />
         <ProjectBlock $color="black" />
         <ClickableContainer onClick={() => handleOpen("beers")}>
           <ProjectBlock
@@ -194,13 +266,13 @@ export default function Projects() {
           </ProjectBlock>
         </ClickableContainer>
         <ProjectBlock $color="white" />
-        <ProjectBlock $color="yellow" />
-        <ProjectBlock $color="black" />
+        <ProjectBlock $color="yellow" className="sm" />
+        <ProjectBlock $color="black" className="md" />
       </BlocksContainer>
       <BlocksContainer>
-        <ProjectBlock $color="white" />
-        <ProjectBlock $color="black" />
-        <ProjectBlock $color="grey" />
+        <ProjectBlock $color="white" className="md" />
+        <ProjectBlock $color="black" className="sm" />
+        <ProjectBlock $color="grey" className="xs" />
         <ClickableContainer onClick={() => handleOpen("odds")}>
           <ProjectBlock
             $color="white"
@@ -229,14 +301,13 @@ export default function Projects() {
             </TextContainer>
           </ProjectBlock>
         </ClickableContainer>
-
-        <ProjectBlock $color="white" />
-        <ProjectBlock $color="grey" />
+        <ProjectBlock $color="white" className="sm" />
+        <ProjectBlock $color="grey" className="md" />
       </BlocksContainer>
       <BlocksContainer>
-        <ProjectBlock $color="black" />
-        <ProjectBlock $color="yellow" />
-        <ProjectBlock $color="black" />
+        <ProjectBlock $color="black" className="md" />
+        <ProjectBlock $color="yellow" className="sm" />
+        <ProjectBlock $color="black" className="xs" />
         <ProjectBlock $color="grey" />
         <ClickableContainer onClick={() => handleOpen("nba")}>
           <ProjectBlock
@@ -252,10 +323,9 @@ export default function Projects() {
             </TextContainer>
           </ProjectBlock>
         </ClickableContainer>
-
         <ProjectBlock $color="yellow" />
-        <ProjectBlock $color="grey" />
-        <ProjectBlock $color="black" />
+        <ProjectBlock $color="grey" className="sm" />
+        <ProjectBlock $color="black" className="md" />
       </BlocksContainer>
       <ProjectModal isOpen={modalOpen} close={handleClose} project={project} />
     </ProjectsContainer>
