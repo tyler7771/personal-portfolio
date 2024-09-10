@@ -15,21 +15,77 @@ const FooterContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 799px) {
+    height: 80vw;
+    flex-direction: column;
+  }
+
+  @media (max-width: 600px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 500px) {
+    height: 75vh;
+  }
+
+  @media (max-width: 400px) {
+    height: 100vh;
+  }
 `;
 
 const FormContainer = styled.div`
   width: 50vw;
+
+  @media (max-width: 1199px) {
+    width: 60vw;
+  }
+
+  @media (max-width: 799px) {
+    margin-top: 32px;
+    width: 85vw;
+  }
 `;
 
 const StyledLogo = styled(Logo)`
   height: 135px;
   margin: 0 10vw;
+
+  @media (max-width: 1199px) {
+    margin: 0 5vw;
+  }
+
+  @media (max-width: 799px) {
+    height: unset;
+    margin: 5vw auto;
+  }
 `;
 
 const Text = styled.p`
   font-size: 30px;
   color: ${colors.yellow};
   margin: 0 0 16px;
+`;
+
+const StyledForm = styled.form`
+  width: 100%;
+  grid-gap: 8px 1vw;
+  display: grid;
+  grid-template-columns: min-content auto;
+
+  div {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex !important;
+  justify-content: flex-end;
 `;
 
 const Label = styled.label<{ $marginTop?: string }>`
@@ -44,7 +100,7 @@ const Label = styled.label<{ $marginTop?: string }>`
 `;
 
 const StyledInput = styled.input`
-  width: 88%;
+  width: 100%;
   background: ${colors.black};
   border: none;
   border-bottom: 1px solid ${colors.yellow};
@@ -57,19 +113,9 @@ const StyledInput = styled.input`
   }
 `;
 
-const FormElContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
-
-  div {
-    display: none;
-  }
-`;
-
 const StyledTextArea = styled.textarea`
   font-size: 22px;
-  width: 88%;
+  width: 100%;
   background-color: ${colors.black};
   color: ${colors.yellow};
   line-height: 4ch;
@@ -86,6 +132,7 @@ const StyledTextArea = styled.textarea`
 `;
 
 const Button = styled.button`
+  width: 25%;
   border: none;
   background-color: ${colors.yellow};
   border-radius: 50px;
@@ -93,10 +140,13 @@ const Button = styled.button`
   color: ${colors.black};
   cursor: pointer;
   padding: 5px 15px;
-  float: right;
 
   &:hover {
     filter: brightness(90%);
+  }
+
+  @media (max-width: 600px) {
+    width: 50%;
   }
 `;
 
@@ -140,19 +190,18 @@ export default function Footer() {
     <FooterContainer id="footer">
       <FormContainer>
         <Text>GET IN TOUCH</Text>
-        <form ref={form} onSubmit={sendEmail}>
-          <FormElContainer>
-            <Label htmlFor="from_email">EMAIL</Label>
-            <StyledInput name="from_email" />
-          </FormElContainer>
-          <FormElContainer>
-            <Label htmlFor="message" $marginTop="16px">
-              MESSAGE
-            </Label>
-            <StyledTextArea name="message" />
-          </FormElContainer>
-          <Button>SEND</Button>
-        </form>
+        <StyledForm ref={form} onSubmit={sendEmail}>
+          <Label htmlFor="from_email">EMAIL</Label>
+          <StyledInput name="from_email" />
+          <Label htmlFor="message" $marginTop="16px">
+            MESSAGE
+          </Label>
+          <StyledTextArea name="message" />
+          <span />
+          <ButtonContainer>
+            <Button>SEND</Button>
+          </ButtonContainer>
+        </StyledForm>
       </FormContainer>
       <StyledLogo />
     </FooterContainer>
