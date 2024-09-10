@@ -78,7 +78,7 @@ const Circle = styled.div`
     }
   }
 
-  @media (max-width: 799px) {
+  @media (max-width: 500px) {
     &:before,
     &:after {
       height: 60vw;
