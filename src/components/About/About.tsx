@@ -3,22 +3,6 @@ import Stripes from "../Shared/Stripes";
 import { colors } from "../../assets/cssHelpers";
 import styled from "styled-components";
 
-// @media (max-width: 1399px) {
-//   margin-top: 6.75px;
-// }
-
-// @media (max-width: 1199px) {
-//   margin-top: 6.75px;
-// }
-
-// @media (max-width: 799px) {
-//   margin-top: 6.75px;
-// }
-
-// @media (max-width: 500px) {
-//   margin-top: 6.75px;
-// }
-
 const AboutContainer = styled.section`
   width: 100%;
   background-color: ${colors.yellow};

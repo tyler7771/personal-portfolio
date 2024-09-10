@@ -15,6 +15,17 @@ const CircleContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 799px) {
+    height: 35vw;
+    width: 35vw;
+  }
+
+  @media (max-width: 500px) {
+    height: 60vw;
+    width: 60vw;
+    margin-bottom: 16px;
+  }
 `;
 
 const Circle = styled.div`
@@ -29,35 +40,49 @@ const Circle = styled.div`
   cursor: pointer;
 
   &:before {
-    content: "";
     border: 1px solid ${colors.black};
-    display: block;
-    border-radius: 50%;
-    width: 22.5vw;
-    height: 22.5vw;
-    position: absolute;
     top: -1vh;
     left: 1vw;
     z-index: 1;
   }
 
   &:after {
-    content: "";
-    border-radius: 50%;
-    display: block;
     background: ${colors.orange};
-    width: 22.5vw;
-    height: 22.5vw;
-    position: absolute;
     top: 0vh;
     left: 0vw;
     z-index: -1;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    height: 22.5vw;
+    width: 22.5vw;
+    position: absolute;
   }
 
   &:hover {
     &:before {
       top: 0;
       left: 0;
+    }
+  }
+
+  @media (max-width: 799px) {
+    &:before,
+    &:after {
+      height: 35vw;
+      width: 35vw;
+    }
+  }
+
+  @media (max-width: 799px) {
+    &:before,
+    &:after {
+      height: 60vw;
+      width: 60vw;
     }
   }
 `;
@@ -71,8 +96,16 @@ const Title = styled.p`
   line-height: 1;
   margin-bottom: 16px;
 
-  @media (min-width: 1200px) and (max-width: 1399px) {
+  @media (max-width: 1399px) {
     font-size: 4vw;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 6.5vw;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 11vw;
   }
 `;
 
@@ -83,8 +116,16 @@ const Company = styled.p`
   text-align: center;
   width: 75%;
 
-  @media (min-width: 1200px) and (max-width: 1399px) {
+  @media (max-width: 1399px) {
     font-size: 1.5vw;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 3.5vw;
   }
 `;
 
@@ -93,8 +134,16 @@ const DateRange = styled.p`
   font-family: "Heathergreen";
   font-size: 1.85vw;
 
-  @media (min-width: 1200px) and (max-width: 1399px) {
+  @media (max-width: 1399px) {
     font-size: 2.5vw;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 3.5vw;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 6vw;
   }
 `;
 
