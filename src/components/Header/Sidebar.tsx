@@ -71,6 +71,7 @@ const NavLink = styled.a`
 
   @media (max-width: 499px) {
     padding-left: 10vw;
+    font-size: 20px;
   }
 
   &:hover {
