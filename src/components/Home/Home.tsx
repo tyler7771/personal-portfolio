@@ -14,7 +14,7 @@ const PortraitContainer = styled.section`
 
   @media (max-width: 932px) {
     margin-top: 90px;
-    height: calc(100vh -90px);
+    height: calc(100vh - 90px);
   }
 `;
 
@@ -25,6 +25,18 @@ const StyledPortait = styled.img`
   position: absolute;
   bottom: 0;
   right: 22%;
+
+  @media (max-width: 1199px) {
+    right: 10%;
+  }
+
+  @media (max-width: 799px) {
+    left: 5%;
+  }
+
+  @media (max-width: 799px) {
+    left: -10%;
+  }
 `;
 
 const Button = styled.a`
@@ -57,13 +69,34 @@ const Button = styled.a`
   }
 
   @media (min-width: 1200px) and (max-width: 1300px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 1199px) {
     font-size: 23px;
+    width: 24%;
+  }
+
+  @media (max-width: 799px) {
+    width: 30%;
+  }
+
+  @media (max-width: 499px) {
+    width: 50%;
   }
 `;
 
 const StyledCurve = styled(Curve)`
   position: absolute;
   bottom: -15px;
+
+  @media (max-width: 1199px) {
+    bottom: -5px;
+  }
+
+  @media (max-width: 800px) {
+    bottom: 0;
+  }
 `;
 
 export default function Header() {

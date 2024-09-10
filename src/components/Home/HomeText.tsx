@@ -7,6 +7,22 @@ const TextContainer = styled.div`
   left: 22%;
   right: 22%;
   transform: translateY(-50%);
+
+  @media (max-width: 1000px) {
+    top: 44%;
+    left: 15%;
+  }
+
+  @media (max-width: 799px) {
+    top: 50%;
+    right: 5%;
+    left: unset;
+    text-align: right;
+  }
+
+  @media (max-width: 499px) {
+    top: 53%;
+  }
 `;
 
 const HelloText = styled.span`
@@ -14,6 +30,18 @@ const HelloText = styled.span`
   font-size: 2.4vw;
   color: ${colors.yellow};
   line-height: 1.4;
+
+  @media (max-width: 1199px) {
+    font-size: 4vw;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 499px) {
+    font-size: 5.5vw;
+  }
 `;
 const NameText = styled.span`
   display: block;
@@ -30,6 +58,10 @@ const NameText = styled.span`
     text-stroke: 3px ${colors.black};
     text-shadow: none;
   }
+
+  @media (max-width: 499px) {
+    font-size: 20vw;
+  }
 `;
 const IdentifyText = styled.span`
   display: block;
@@ -37,6 +69,10 @@ const IdentifyText = styled.span`
   color: ${colors.yellow};
   font-size: 15.5vw;
   line-height: 1;
+
+  @media (max-width: 499px) {
+    font-size: 20vw;
+  }
 `;
 
 export default function HomeText() {

@@ -3,6 +3,22 @@ import Stripes from "../Shared/Stripes";
 import { colors } from "../../assets/cssHelpers";
 import styled from "styled-components";
 
+// @media (max-width: 1399px) {
+//   margin-top: 6.75px;
+// }
+
+// @media (max-width: 1199px) {
+//   margin-top: 6.75px;
+// }
+
+// @media (max-width: 799px) {
+//   margin-top: 6.75px;
+// }
+
+// @media (max-width: 500px) {
+//   margin-top: 6.75px;
+// }
+
 const AboutContainer = styled.section`
   width: 100%;
   background-color: ${colors.yellow};
@@ -15,6 +31,10 @@ const InfoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 799px) {
+    align-items: unset;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -59,6 +79,34 @@ const TextContainer = styled.div`
     bottom: -10%;
     left: 3%;
     z-index: 0;
+  }
+
+  @media (max-width: 799px) {
+    padding: 3vw 4vw 3vw 12vw;
+    height: 40vw;
+
+    p {
+      font-size: 2.25vw;
+    }
+
+    &:after {
+      top: 5%;
+      bottom: -5%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 3vw 4vw 3vw 12vw;
+    height: 68vw;
+
+    p {
+      font-size: 3vw;
+    }
+
+    &:after {
+      top: 3%;
+      bottom: -3%;
+    }
   }
 `;
 
@@ -107,6 +155,14 @@ const SkillsContainer = styled.div`
   margin: 0 auto;
   padding-left: 7vw;
   grid-template-areas: "header header header" "left center right" "left center right" "left center right";
+
+  @media (max-width: 799px) {
+    width: 85vw;
+  }
+
+  @media (max-width: 500px) {
+    width: 95vw;
+  }
 `;
 
 const SkillsHeader = styled.div`
@@ -114,6 +170,14 @@ const SkillsHeader = styled.div`
   text-align: center;
   font-size: 1.5vw;
   margin-bottom: 16px;
+
+  @media (max-width: 799px) {
+    font-size: 2.5vw;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 3.5vw;
+  }
 `;
 
 const SkillsRow = styled.div`
@@ -121,6 +185,14 @@ const SkillsRow = styled.div`
     font-size: 1.5vw;
     font-family: "Inter Bold";
     margin-bottom: 8px;
+
+    @media (max-width: 799px) {
+      font-size: 2vw;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 2.5vw;
+    }
 
     &:nth-child(1) {
       grid-area: left;

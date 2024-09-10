@@ -51,12 +51,25 @@ const projectInfo = {
 
 const BodyContainer = styled.div`
   display: flex;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: 25%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 600px) {
+    height: 25vw;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
 `;
 
 const Image = styled.img`
@@ -64,6 +77,21 @@ const Image = styled.img`
   margin-bottom: 16px;
   object-fit: cover;
   width: 100%;
+
+  @media (max-width: 600px) {
+    width: 25vw;
+    margin-bottom: 0;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    width: 40%;
+  }
 `;
 
 const Button = styled.a`
@@ -85,11 +113,26 @@ const Button = styled.a`
   &:hover {
     filter: brightness(95%);
   }
+
+  @media (max-width: 600px) {
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    margin-top: 8px;
+  }
 `;
 
 const DescriptionContainer = styled.div`
   padding-left: 24px;
   width: 75%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const StyledDescription = styled.p`
@@ -112,12 +155,14 @@ export default function ProjectModal({
       <BodyContainer>
         <ImageContainer>
           <Image src={img} />
-          <Button href={prodLink} target="_blank">
-            View
-          </Button>
-          <Button href={gitLink} target="_blank">
-            Github
-          </Button>
+          <ButtonsContainer>
+            <Button href={prodLink} target="_blank">
+              View
+            </Button>
+            <Button href={gitLink} target="_blank">
+              Github
+            </Button>
+          </ButtonsContainer>
         </ImageContainer>
         <DescriptionContainer>
           {description.split("\n").map((el, i) => (

@@ -3,10 +3,10 @@ import styled, { css } from "styled-components";
 import { colors } from "../../assets/cssHelpers";
 
 const SidebarContainer = styled.div<{ $open: boolean | null }>`
-  height: calc(100vh - 180px);
+  height: calc(100vh - 9.65vw);
   position: fixed;
   right: 0;
-  top: 180px;
+  top: 9.65vw;
   background: ${colors.yellow};
   transition: 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
   width: 25vw;
@@ -19,7 +19,36 @@ const SidebarContainer = styled.div<{ $open: boolean | null }>`
       box-shadow: none;
       transform: translateX(25vw);
       transition: transform 0.75s cubic-bezier(0.36, -0.01, 0, 0.77);
+
+      @media (max-width: 1199px) {
+        transform: translateX(35vw);
+      }
+
+      @media (max-width: 799px) {
+        transform: translateX(50vw);
+      }
+
+      @media (max-width: 499px) {
+        transform: translateY(-100vh);
+      }
     `}
+
+  @media (max-width: 1199px) {
+    width: 35vw;
+  }
+
+  @media (max-width: 799px) {
+    width: 50vw;
+  }
+
+  @media (max-width: 499px) {
+    width: 100vw;
+  }
+
+  @media (max-width: 932px) {
+    top: 90px;
+    height: calc(100vh - 90px);
+  }
 `;
 
 const NavLink = styled.a`
@@ -35,6 +64,14 @@ const NavLink = styled.a`
   cursor: pointer;
   color: ${colors.black};
   text-decoration: none;
+
+  @media (max-width: 799px) {
+    padding-left: 5vw;
+  }
+
+  @media (max-width: 499px) {
+    padding-left: 10vw;
+  }
 
   &:hover {
     background-color: rgba(225, 225, 225, 0.6);
