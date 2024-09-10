@@ -73,8 +73,8 @@ const Text = styled.span`
 `;
 
 export default function WorkExperience() {
-  const [modalOpen, setModalOpen] = useState(true);
-  const [job, setJob] = useState<ExperienceTypes>("Salesloft");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [job, setJob] = useState<ExperienceTypes>(null);
 
   const handleOpen = (currentJob: ExperienceTypes) => {
     setModalOpen(true);
