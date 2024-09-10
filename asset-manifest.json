@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bb8e21ab.css",
-    "main.js": "/static/js/main.334dbfbe.js",
+    "main.js": "/static/js/main.651eb44c.js",
     "static/js/453.2b200461.chunk.js": "/static/js/453.2b200461.chunk.js",
     "static/media/NeverTellMeTheOdds.png": "/static/media/NeverTellMeTheOdds.47efe902f8339ee5f063.png",
     "static/media/Portrait.png": "/static/media/Portrait.b69622397f593eaba654.png",
@@ -21,11 +21,11 @@
     "static/media/X.svg": "/static/media/X.d1115548f286f5eddc137fc7dec7be2f.svg",
     "static/media/Curve.svg": "/static/media/Curve.b0d392cba146187ab619534988d569b5.svg",
     "main.bb8e21ab.css.map": "/static/css/main.bb8e21ab.css.map",
-    "main.334dbfbe.js.map": "/static/js/main.334dbfbe.js.map",
+    "main.651eb44c.js.map": "/static/js/main.651eb44c.js.map",
     "453.2b200461.chunk.js.map": "/static/js/453.2b200461.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb8e21ab.css",
-    "static/js/main.334dbfbe.js"
+    "static/js/main.651eb44c.js"
   ]
 }
