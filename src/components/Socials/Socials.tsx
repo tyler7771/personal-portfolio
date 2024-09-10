@@ -16,6 +16,16 @@ const SocialsContainer = styled.section`
   height: 18vw;
   background-color: ${colors.white};
   position: relative;
+
+  @media (max-width: 799px) {
+    height: 22vw;
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 200vw;
+  }
 `;
 
 const bikeScroll = keyframes`
@@ -33,6 +43,15 @@ const Img = styled.img`
   animation: ${bikeScroll} linear forwards;
   animation-timeline: view();
   animation-range: cover 0% cover 35%;
+
+  @media (max-width: 799px) {
+    height: 22vw;
+  }
+
+  @media (max-width: 500px) {
+    height: 35vw;
+    animation-range: cover 0% cover 15%;
+  }
 `;
 
 const SocialLinksContainer = styled.div`
@@ -42,6 +61,11 @@ const SocialLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 500px) {
+    margin: 0;
+    width: 100%;
+  }
 `;
 
 const Text = styled.span`
@@ -60,6 +84,16 @@ const Text = styled.span`
     -webkit-text-stroke: 3px ${colors.black};
     text-stroke: 3px ${colors.black};
     text-shadow: none;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 10vw;
+  }
+
+  @media (max-width: 500px) {
+    line-height: 1;
+    font-size: 15vw;
+    margin: 0 auto 16px;
   }
 `;
 
@@ -80,9 +114,19 @@ const SocialLinks = styled.ul`
   align-items: center;
   list-style: none;
 
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
   li {
     display: inline-block;
     position: relative;
+
+    @media (max-width: 500px) {
+      &:nth-child(5) {
+        margin-bottom: 70px;
+      }
+    }
   }
 
   svg {
@@ -153,6 +197,20 @@ const SocialLinks = styled.ul`
 
       path {
         fill: url(#gradient);
+      }
+    }
+
+    @media (max-width: 799px) {
+      height: 9vw;
+      width: 9vw;
+    }
+
+    @media (max-width: 500px) {
+      height: 20vw;
+      width: 20vw;
+
+      &:nth-child(5) {
+        margin-bottom: 30px;
       }
     }
   }
