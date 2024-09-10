@@ -8,7 +8,7 @@ type ModalProps = {
   children: ReactElement;
   isOpen: boolean;
   onClose: () => void;
-  title: string;
+  title: string | ReactElement;
 };
 
 const show = keyframes`
@@ -100,7 +100,7 @@ export default function Modal({
   return (
     <ModalContainer ref={modalRef} onClose={onClose} onClick={onClick}>
       <ModalHeader>
-        <ModalTitle>{title}</ModalTitle>
+        {typeof title === "string" ? <ModalTitle>{title}</ModalTitle> : title}
         <Button onClick={onClose}>
           <X />
         </Button>

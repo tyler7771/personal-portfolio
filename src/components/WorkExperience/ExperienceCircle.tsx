@@ -5,8 +5,9 @@ import styled from "styled-components";
 
 type ExperianceCircleProps = {
   title: string;
-  company: string;
+  company: string | null;
   dateRange: string;
+  onClick: () => void;
 };
 
 const CircleContainer = styled.div`
@@ -95,6 +96,7 @@ const Title = styled.p`
   text-align: center;
   line-height: 1;
   margin-bottom: 16px;
+  text-transform: uppercase;
 
   @media (max-width: 1399px) {
     font-size: 4vw;
@@ -115,6 +117,7 @@ const Company = styled.p`
   font-size: 1.25vw;
   text-align: center;
   width: 75%;
+  text-transform: uppercase;
 
   @media (max-width: 1399px) {
     font-size: 1.5vw;
@@ -133,6 +136,7 @@ const DateRange = styled.p`
   color: ${colors.yellow};
   font-family: "Heathergreen";
   font-size: 1.85vw;
+  text-transform: uppercase;
 
   @media (max-width: 1399px) {
     font-size: 2.5vw;
@@ -151,9 +155,10 @@ export default function ExperienceCircle({
   title,
   company,
   dateRange,
+  onClick,
 }: ExperianceCircleProps) {
   return (
-    <CircleContainer>
+    <CircleContainer onClick={onClick}>
       <Circle>
         <Title>{title}</Title>
         <Company>{company}</Company>

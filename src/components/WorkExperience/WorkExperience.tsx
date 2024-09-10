@@ -1,6 +1,12 @@
+import ExperienceModal, {
+  ExperienceTypes,
+  workExperienceObj,
+} from "./ExperienceModal";
+
 import ExperienceCircle from "./ExperienceCircle";
 import { colors } from "../../assets/cssHelpers";
 import styled from "styled-components";
+import { useState } from "react";
 
 const WorkContainer = styled.section`
   width: 100%;
@@ -67,37 +73,38 @@ const Text = styled.span`
 `;
 
 export default function WorkExperience() {
+  const [modalOpen, setModalOpen] = useState(true);
+  const [job, setJob] = useState<ExperienceTypes>("Salesloft");
+
+  const handleOpen = (currentJob: ExperienceTypes) => {
+    setModalOpen(true);
+    setJob(currentJob);
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setJob(null);
+  };
+
   return (
     <WorkContainer id="work">
       <Text>EXPERIENCE</Text>
       <GridContainer>
         <div />
-        <ExperienceCircle
-          title="UI ENGINEER"
-          company="SALESLOFT"
-          dateRange="NOV 2021 - AUG 2024"
-        />
-        <ExperienceCircle
-          title="FRONTEND DEVELOPER"
-          company="TERRITORY FOODS"
-          dateRange="MAR 2021 - OCT 2021"
-        />
-        <ExperienceCircle
-          title="UI/UX ENGINEER II"
-          company="RENAISSANCE ELECTRONIC SERVICES"
-          dateRange="OCT 2017 - MAR 2021"
-        />
-        <ExperienceCircle
-          title="INSTRUCTOR, BOOTCAMP PREP"
-          company="SALESLOFT"
-          dateRange="MAY 2017 - SEP 2017"
-        />
-        <ExperienceCircle
-          title="SOFTWARE ENGINEER INTERN"
-          company="SHOP.CO"
-          dateRange="MAR 2017 - SEP 2017"
-        />
+        {Object.keys(workExperienceObj).map((job, i) => {
+          const { jobTitle, title, dateRange } = workExperienceObj[job];
+          return (
+            <ExperienceCircle
+              key={i}
+              title={jobTitle}
+              company={title}
+              dateRange={dateRange}
+              onClick={() => handleOpen(title)}
+            />
+          );
+        })}
       </GridContainer>
+      <ExperienceModal isOpen={modalOpen} close={handleClose} job={job} />
     </WorkContainer>
   );
 }
