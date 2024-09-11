@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bb8e21ab.css",
-    "main.js": "/static/js/main.5ae0217e.js",
+    "main.js": "/static/js/main.8ff306ad.js",
     "static/js/453.2b200461.chunk.js": "/static/js/453.2b200461.chunk.js",
     "static/media/NeverTellMeTheOdds.png": "/static/media/NeverTellMeTheOdds.47efe902f8339ee5f063.png",
     "static/media/Portrait.png": "/static/media/Portrait.b69622397f593eaba654.png",
@@ -15,20 +15,22 @@
     "static/media/IWU.png": "/static/media/IWU.b6502c71f95aaf893469.png",
     "static/media/ChristmasBeer.jpg": "/static/media/ChristmasBeer.23afe70b7bf052ccd750.jpg",
     "static/media/aboutPortrait.jpg": "/static/media/aboutPortrait.fe9ea1c7123de5032f10.jpg",
+    "static/media/Phone.png": "/static/media/Phone.edffd49c518cfb7e7928.png",
     "static/media/RES.png": "/static/media/RES.efcf7c411d15de741c1b.png",
     "static/media/Salesloft.png": "/static/media/Salesloft.29cd742fd8a11e4e14a9.png",
     "static/media/ChatCircle.svg": "/static/media/ChatCircle.5a9348eda26dff5afcc09344929e9dc2.svg",
     "static/media/AppAcademy.png": "/static/media/AppAcademy.bd530c195ba1e2fc6917.png",
+    "static/media/Arrow.png": "/static/media/Arrow.a0739e74fade2655d4e3.png",
     "static/media/Logo.svg": "/static/media/Logo.283fe0554c7246ad171be53bd384235f.svg",
     "index.html": "/index.html",
     "static/media/X.svg": "/static/media/X.d1115548f286f5eddc137fc7dec7be2f.svg",
     "static/media/Curve.svg": "/static/media/Curve.b0d392cba146187ab619534988d569b5.svg",
     "main.bb8e21ab.css.map": "/static/css/main.bb8e21ab.css.map",
-    "main.5ae0217e.js.map": "/static/js/main.5ae0217e.js.map",
+    "main.8ff306ad.js.map": "/static/js/main.8ff306ad.js.map",
     "453.2b200461.chunk.js.map": "/static/js/453.2b200461.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb8e21ab.css",
-    "static/js/main.5ae0217e.js"
+    "static/js/main.8ff306ad.js"
   ]
 }
